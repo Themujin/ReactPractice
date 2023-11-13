@@ -3,8 +3,8 @@ import "./styles.css";
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>React Test project 0.1</h1>
+      <h2>List manipulation</h2>
       <div className="wrapper">
         <div className="control">
           <input type="text" name="" id="" />
