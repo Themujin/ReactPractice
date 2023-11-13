@@ -1,12 +1,13 @@
 import "./styles.css";
-
+import { useState } from "react";
 import Item from "./Components/Item.js";
 
 export default function App() {
-  // const [count, setCount] = useState(0);
+  const [name, setName] = useState("");
 
   const handleSubmit = (event) => {
-    console.log();
+    event.preventDefault();
+    alert(`The name you entered was: ${name}`);
   };
 
   return (
@@ -16,7 +17,11 @@ export default function App() {
       <div className="wrapper">
         <div className="control">
           <form onSubmit={handleSubmit}>
-            <input type="text" value="" />
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <input type="submit" value="Update List" />
           </form>
         </div>
