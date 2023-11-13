@@ -1,12 +1,17 @@
 import "./styles.css";
-
+import { useState } from "react";
 import Item from "./Components/Item.js";
 
 export default function App() {
-  // const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
-  const handleSubmit = (event) => {
-    console.log();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(count);
+  };
+
+  const list = (count) => {
+    return <Item id={count} title={"Test title ${count}"} />;
   };
 
   return (
@@ -16,13 +21,15 @@ export default function App() {
       <div className="wrapper">
         <div className="control">
           <form onSubmit={handleSubmit}>
-            <input type="text" value="" />
+            <input
+              type="text"
+              value={count}
+              onChange={(e) => setCount(e.target.value)}
+            />
             <input type="submit" value="Update List" />
           </form>
         </div>
-        <div className="list">
-          <Item id="1" title="Test title" />
-        </div>
+        <div className="list">{list(count)}</div>
       </div>
     </div>
   );
