@@ -3,6 +3,7 @@ import { useState } from "react";
 import Item from "./Components/Item.js";
 
 export default function App() {
+
   const [count, setCount] = useState("");
 
   const handleSubmit = (event) => {
@@ -16,6 +17,7 @@ export default function App() {
       items.push(<Item id={index} title="Test title" />);
     }
     return items;
+
   };
 
   return (
@@ -34,6 +36,7 @@ export default function App() {
           </form>
         </div>
 
+
         <div className="list">
          {if (count < 1) 
           {list()}
@@ -41,6 +44,7 @@ export default function App() {
         }
           
         </div>
+
       </div>
     </div>
   );
