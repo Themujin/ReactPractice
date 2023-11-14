@@ -3,15 +3,21 @@ import { useState } from "react";
 import Item from "./Components/Item.js";
 
 export default function App() {
-  const [count, setCount] = useState(0);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(count);
+  const [count, setCount] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The value you entered was: ${count}`);
   };
 
-  const list = (count) => {
-    return <Item id={count} title={"Test title ${count}"} />;
+  const list = () => {
+    const items = [];
+    for (let index = 0; index < count; index++) {
+      items.push(<Item id={index} title="Test title" />);
+    }
+    return items;
+
   };
 
   return (
@@ -29,7 +35,16 @@ export default function App() {
             <input type="submit" value="Update List" />
           </form>
         </div>
-        <div className="list">{list(count)}</div>
+
+
+        <div className="list">
+         {if (count < 1) 
+          {list()}
+         
+        }
+          
+        </div>
+
       </div>
     </div>
   );
