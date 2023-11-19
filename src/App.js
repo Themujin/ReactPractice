@@ -34,6 +34,10 @@ export default function App() {
     },
   ]);
 
+  const updateTask = () => {
+    console.log(data);
+  };
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -44,7 +48,7 @@ export default function App() {
           <Link to="/list">List</Link>
         </nav>
         <Routes>
-          <Route path="/" element={<Form />}></Route>
+          <Route path="/" element={<Form updateTask={updateTask} />}></Route>
           <Route path="/list" element={<List task={data} />}></Route>
         </Routes>
         <div className="wrapper">
