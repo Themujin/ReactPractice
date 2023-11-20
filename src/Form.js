@@ -5,8 +5,12 @@ const Form = (props) => {
   const taskCategory = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(props.updateTask());
+    const task = {
+      id: "",
+      Task: taskTitle.current.value,
+      Application: taskCategory.current.value,
+    };
+    props.updateTask(task);
   };
 
   return (

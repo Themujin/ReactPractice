@@ -34,7 +34,10 @@ export default function App() {
     },
   ]);
 
-  const updateTask = () => {
+  const updateTask = (task) => {
+    data.push(task);
+    task.id = data.length;
+    setData(data);
     console.log(data);
   };
 
