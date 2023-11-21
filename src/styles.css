@@ -11,6 +11,11 @@
   border: 1px solid #ccc;
   padding: 1em;
 }
+
+.control {
+  text-align: left;
+}
+
 .item {
   display: flex;
   border: 1px solid #ccc;
@@ -26,7 +31,8 @@
     font-weight: bold;
     margin-right: 0.4em;
   }
+
   .item__title {
-    color:;
+    color: red;
   }
 }

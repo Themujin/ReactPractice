@@ -1,16 +1,19 @@
 import { useRef, useState } from "react";
 
 const Form = (props) => {
-  const taskTitle = useRef();
-  const taskCategory = useRef();
+  const taskTitleInput = useRef();
+  const taskApplicationInput = useRef();
+
+  const updateData = props.updateTask;
   const handleSubmit = (e) => {
     e.preventDefault();
-    const task = {
+
+
+    const tasktitle = updateData({
       id: "",
-      Task: taskTitle.current.value,
-      Application: taskCategory.current.value,
-    };
-    props.updateTask(task);
+      task: taskTitleInput.current.value,
+      application: taskApplicationInput.current.value,
+    });
   };
 
   return (
@@ -19,12 +22,18 @@ const Form = (props) => {
         <label htmlFor="taskName" className="control-label">
           Task Title:
         </label>
-        <input type="text" id="taskName" ref={taskTitle} />
+        <br />
+        <input type="text" id="taskName" ref={taskTitleInput} />
         <br /> <br />
         <label htmlFor="taskCat" className="control-label">
           Task Category:
         </label>
-        <input type="text" id="taskCat" ref={taskCategory} />
+        <br />
+        <input
+          type="text"
+          id="taskCat"
+          ref={taskApplicationInput}
+        /> <br /> <br />
         <input type="submit" value="Update List" />
       </form>
     </div>

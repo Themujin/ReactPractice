@@ -35,10 +35,10 @@ export default function App() {
   ]);
 
   const updateTask = (task) => {
-    data.push(task);
+
     task.id = data.length;
+    data.push(task);
     setData(data);
-    console.log(data);
   };
 
   return (
