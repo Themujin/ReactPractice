@@ -8,11 +8,10 @@ const Form = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
-    const tasktitle = updateData({
+    updateData({
       id: "",
-      task: taskTitleInput.current.value,
-      application: taskApplicationInput.current.value,
+      Task: taskTitleInput.current.value,
+      Application: taskApplicationInput.current.value,
     });
   };
 
