@@ -35,6 +35,7 @@ export default function App() {
   ]);
 
   const updateTask = (task) => {
+
     task.id = data.length;
     data.push(task);
     setData(data);
