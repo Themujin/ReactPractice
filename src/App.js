@@ -37,8 +37,22 @@ export default function App() {
   const updateTask = (task) => {
     task.id = data.length + 1;
     data.push(task);
-    console.log(data);
+
     setData(data);
+  };
+  const RemoveTask = (task) => {
+    console.log(task);
+    var res = data.filter((p, i) => {
+      if (p.id == task) {
+        data.splice(i, 1);
+        // return data;
+        //  setData(data);
+        setData((data) => [...data]);
+      }
+    });
+    //  setData(data);
+    // setData((data) => [...data]);
+    console.log(data);
   };
 
   return (
@@ -51,8 +65,11 @@ export default function App() {
           <Link to="/list">List</Link>
         </nav>
         <Routes>
-          <Route path="/" element={<Form updateTask={updateTask} />}></Route>
-          <Route path="/list" element={<List task={data} />}></Route>
+          <Route path="/" element={<Form updateData={updateTask} />}></Route>
+          <Route
+            path="/list"
+            element={<List task={data} RemoveTask={RemoveTask} />}
+          ></Route>
         </Routes>
         <div className="wrapper">
           <Outlet />
