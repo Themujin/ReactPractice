@@ -2,15 +2,13 @@ import { useState } from "react";
 import Input from "./Components/Input";
 
 const Form = (props) => {
-  const updateData = props.updateTask;
-
   const [task, setTask] = useState("");
   const [application, setApplication] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(task);
-    console.log(application);
+    const postData = { id: "", Task: task, Application: application };
+    props.updateData(postData);
   };
   return (
     <div className="control">
