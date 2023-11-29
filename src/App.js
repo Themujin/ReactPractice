@@ -70,6 +70,10 @@ export default function App() {
             path="/list"
             element={<List task={data} RemoveTask={RemoveTask} />}
           ></Route>
+          <Route
+            path="/detail/:id"
+            element={<Detail task={id} />}
+          ></Route>
         </Routes>
         <div className="wrapper">
           <Outlet />
